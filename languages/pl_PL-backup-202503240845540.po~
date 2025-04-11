@@ -1,0 +1,252 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Fitness Pleasure\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-24 08:33+0000\n"
+"PO-Revision-Date: 2025-03-24 08:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: Polish\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10 >= 2 && n%10<=4 "
+"&&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.7.1; wp-6.7.2\n"
+"X-Domain: fitness_pleasure"
+
+#: template-parts/components/title-simple.php:9
+#: template-parts/components/title-page.php:6
+#: template-parts/components/title-post.php:7
+#: template-parts/components/title-section.php:9
+#: template-parts/components/title-section.php:11
+#: template-parts/components/title-section.php:13
+#, php-format
+msgid "%s"
+msgstr ""
+
+#. Name of the template
+#: archive.php:2
+msgid "Archives"
+msgstr ""
+
+#: template-parts/components/title-blog-posts.php:8
+msgid "Blog Posts"
+msgstr ""
+
+#: functions.php:234
+msgid "Brands Images"
+msgstr ""
+
+#: template-parts/post/content-post.php:14
+msgid "by"
+msgstr ""
+
+#: template-parts/components/site-menu.php:34
+msgid "Close navigation"
+msgstr ""
+
+#: functions.php:427
+msgid "Contact Form WSform ID"
+msgstr ""
+
+#. Name of the template
+#: theme-templates/page-contact.php:2
+msgid "Contact Page"
+msgstr ""
+
+#: template-parts/post/navigation-post.php:6
+msgid "Continue Reading"
+msgstr ""
+
+#: functions.php:430
+msgid "Enter the WS Form ID for your contact form. "
+msgstr ""
+
+#: functions.php:418
+msgid "Enter the WS Form ID for your newsletter form."
+msgstr ""
+
+#: 404.php:21
+msgid "Fancy a search?"
+msgstr ""
+
+#: template-parts/content/preview-posts-sticky.php:22
+msgid "Featured Posts"
+msgstr ""
+
+#. Name of the theme
+msgid "Fitness Pleasure"
+msgstr ""
+
+#: functions.php:326
+msgid "Front Page Title"
+msgstr ""
+
+#: functions.php:215
+msgid "Hero Image"
+msgstr ""
+
+#. Name of the template
+#: theme-templates/page-home.php:2
+msgid "Home Page Fallback"
+msgstr ""
+
+#. Author of the theme
+msgid "Kalissima"
+msgstr ""
+
+#: 404.php:18
+msgid ""
+"Looks like you’ve pushed past the limits… but not in the way we wanted. 😏 "
+"This page is lost, but don’t worry—just like in the gym, we can recover!"
+msgstr ""
+
+#: template-parts/navigation/menu-mobile.php:7
+#: template-parts/components/site-menu.php:29
+#: template-parts/components/site-menu.php:40
+#: template-parts/components/site-menu.php:54
+msgid "Main Navigation"
+msgstr ""
+
+#: template-parts/components/component-pagination.php:10
+msgid "Newer Posts"
+msgstr ""
+
+#: functions.php:415
+msgid "Newsletter WSform ID"
+msgstr ""
+
+#: template-parts/post/navigation-post.php:4
+msgid "Next Post"
+msgstr ""
+
+#: functions.php:379
+msgid "No Menu Assigned"
+msgstr ""
+
+#: search.php:29
+msgid "No posts found."
+msgstr ""
+
+#: 404.php:12
+msgid "Not Found"
+msgstr ""
+
+#: template-parts/footer/newsletter-form.php:10
+msgid "Please set your newsletter form ID in the Customizer."
+msgstr ""
+
+#: template-parts/post/navigation-post.php:5
+msgid "Previous Post"
+msgstr ""
+
+#: template-parts/content/content-single-preview.php:29
+msgid "Read More"
+msgstr ""
+
+#: template-parts/footer/search-form.php:4
+msgid "Search the page"
+msgstr ""
+
+#: searchform.php:2
+msgid "Search the site"
+msgstr ""
+
+#: archive.php:28
+msgid "Select month, category or use the search box."
+msgstr ""
+
+#: functions.php:353
+msgid "Set your front page subtitle"
+msgstr ""
+
+#: functions.php:338
+msgid "Set your front page title"
+msgstr ""
+
+#: functions.php:403
+msgid "Show Newsletter Form"
+msgstr ""
+
+#: functions.php:449
+msgid "Show Social Media Widget"
+msgstr ""
+
+#: template-parts/components/site-logo-title.php:13
+msgid "Site Logo"
+msgstr ""
+
+#: functions.php:52
+msgid "Site Menu"
+msgstr ""
+
+#: template-parts/components/site-logo-title.php:20
+msgid "Site Name & Motto"
+msgstr ""
+
+#: archive.php:35 template-parts/footer/search-form.php:7
+#: template-parts/components/title-blog-posts.php:15
+msgid "Site search"
+msgstr ""
+
+#: functions.php:439
+msgid "Social Media Widget"
+msgstr ""
+
+#: template-parts/footer/newsletter-form.php:4
+msgid "Subscribe to the Newsletter"
+msgstr ""
+
+#: template-parts/components/site-menu.php:14
+msgid "Toggle navigation"
+msgstr ""
+
+#: functions.php:244
+msgid "Upload 1st Image"
+msgstr ""
+
+#: functions.php:264
+msgid "Upload 2n Image"
+msgstr ""
+
+#: functions.php:284
+msgid "Upload 3rd Image"
+msgstr ""
+
+#: functions.php:304
+msgid "Upload 4th Image"
+msgstr ""
+
+#: functions.php:227
+msgid "Upload Hero Image"
+msgstr ""
+
+#: functions.php:254
+msgid "URL for Brand 1"
+msgstr ""
+
+#: functions.php:274
+msgid "URL for Brand 2"
+msgstr ""
+
+#: functions.php:294
+msgid "URL for Brand 3"
+msgstr ""
+
+#: functions.php:314
+msgid "URL for Brand 4"
+msgstr ""
+
+#: template-parts/footer/footer-copyrights.php:6
+msgid "Visit the author's website"
+msgstr ""
+
+#: functions.php:393
+msgid "WSform Integration"
+msgstr ""
+
+#: functions.php:367
+msgid "⚠️ Navigation Notice"
+msgstr ""

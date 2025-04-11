@@ -1,0 +1,17 @@
+# Exclude sensitive configuration and server-specific files
+wp-config.php
+
+# Exclude user-uploaded content
+uploads/
+
+# Exclude system and temporary files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Exclude build tool artifacts
+node_modules/
+dist/
+build/
+assets/.DS_Store
