@@ -12,7 +12,6 @@
     --color-black: oklch(0 0 0);
     --color-white: oklch(1 0 0);
     --spacing: 0.25rem;
-    --breakpoint-xl: 80rem;
     --container-xl: 36rem;
     --container-2xl: 42rem;
     --text-xs: 0.75rem;
@@ -54,8 +53,8 @@
     );
     --font-dmsans: Dmsans, sans-serif;
     --font-montserrat: Montserrat, sans-serif;
-    --color-primary: oklch(0.913 0.177 134.44);
-    --color-accent: oklch(56.82% 0.107 134.44);
+    --color-primary: oklch(73.5% 0.1825 51.54);
+    --color-accent: oklch(48.0% 0.1347 38.12);
   }
 }
 @layer base {
@@ -375,9 +374,6 @@
   }
   .w-screen {
     width: 100vw;
-  }
-  .max-w-screen-xl {
-    max-width: var(--breakpoint-xl);
   }
   .flex-grow {
     flex-grow: 1;

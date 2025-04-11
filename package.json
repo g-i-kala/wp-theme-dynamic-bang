@@ -3,7 +3,7 @@
     "@tailwindcss/cli": "^4.0.9",
     "tailwindcss": "^4.0.9"
   },
-  "name": "fitness_pleasure",
+  "name": "dynamic_bang",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

@@ -3,8 +3,15 @@
 @theme {
     --font-dmsans: Dmsans, sans-serif;
     --font-montserrat: Montserrat, sans-serif;
-    --color-primary: oklch(0.913 0.177 134.44);
-    --color-accent: oklch(56.82% 0.107 134.44);
+    --color-primary: oklch(73.5% 0.1825 51.54);     /* was 63.47%, now punchier */
+    --color-secondary: oklch(84.0% 0.1554 72.61);   /* brighter golden orange */
+    --color-dark-accent: oklch(48.0% 0.1347 38.12); /* richer brown, less muddy */
+    --color-mint: oklch(89.0% 0.1023 151.82);       /* soft neon mint */
+    --color-yellow: oklch(97.0% 0.1326 110.12);     /* closer to highlighter tone */
+    --color-cream: oklch(98.5% 0.0383 101.12);      /* super clean off-white */
+    --color-gray: oklch(97.5% 0.0036 262.69);       /* brighter neutral gray */
+    --color-navy: oklch(39.5% 0.0463 282.33);  
+    --color-accent: oklch(48.0% 0.1347 38.12);
     --color-secondary: oklch(0 0 0);
     --color-text: oklch(0.323 0 0);
     --color-content-bg: oklch(1 0 0);

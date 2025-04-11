@@ -26,7 +26,7 @@
                 <?php get_template_part('/template-parts/components/component-pagination'); ?>   
 
             <?php else : ?>
-                <p><?php esc_html_e('No posts found.', 'fitness_pleasure'); ?></p>
+                <p><?php esc_html_e('No posts found.', 'dynamic_bang'); ?></p>
             <?php endif; ?>
         </div>
     

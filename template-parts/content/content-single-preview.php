@@ -29,7 +29,7 @@
                 class="read-more read-more-link-preview font-montserrat" 
                 href="<?php the_permalink(); ?>" 
                 data-post-title="<?php echo esc_attr(get_the_title()); ?>">
-                <?php _e('Read More', 'fitness_pleasure'); ?>
+                <?php _e('Read More', 'dynamic_bang'); ?>
             </a>
 
         </div>

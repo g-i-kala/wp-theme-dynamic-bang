@@ -1,11 +1,11 @@
-# Fitness Pleasure WordPress Theme
+# Dynamic Bang WordPress Theme
 
-Fitness Pleasure is a custom-built WordPress theme designed for fitness coaches and trainers. This theme is intended for educational and demonstration purposes only and is not for sale or commercial use.
+Dynamic Bang is a custom-built WordPress theme designed for fitness coaches and trainers. This theme is intended for educational and demonstration purposes only and is not for sale or commercial use.
 
 ## Getting Started
 
 ### Installation
-1. Download the theme files and upload them to `wp-content/themes/fitness-pleasure`.
+1. Download the theme files and upload them to `wp-content/themes/dynamic-bang`.
 2. Activate the theme via `Appearance > Themes` in the WordPress dashboard.
 3. Customize the theme using the WordPress Customizer (`Appearance > Customize`).
 
@@ -68,4 +68,4 @@ Feel free to fork and submit pull requests. Report issues in the issues section.
 For support, contact karocreativedesigns@gmail.com.
 If you like the theme, and like to use tweak it and use it don't hesitate!
 
-Enjoy creating with the Fitness Pleasure WordPress Theme!
+Enjoy creating with the Dynamic Bang WordPress Theme!

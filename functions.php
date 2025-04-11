@@ -1,10 +1,10 @@
 <?php
 
 /**
- * fitness_pleasure's functions and definitions
+ * dynamic_bang's functions and definitions
  *
- * @package fitness_pleasure
- * @since fitness_pleasure 1.0
+ * @package dynamic_bang
+ * @since dynamic_bang 1.0
  */
 
 /**
@@ -17,7 +17,7 @@ if (! isset($content_width)) {
 }
 
 
-if (! function_exists('fitness_pleasure_setup')) :
+if (! function_exists('dynamic_bang_setup')) :
 
     /**
      * Sets up theme defaults and registers support for various
@@ -27,14 +27,14 @@ if (! function_exists('fitness_pleasure_setup')) :
      * hook, which runs before the init hook. The init hook is too late
      * for some features, such as indicating support post thumbnails.
      */
-    function fitness_pleasure_setup()
+    function dynamic_bang_setup()
     {
 
         /**
          * Make theme available for translation.
          * Translations can be placed in the /languages/ directory.
          */
-        load_theme_textdomain('fitness_pleasure', get_template_directory() . '/languages');
+        load_theme_textdomain('dynamic_bang', get_template_directory() . '/languages');
 
         /**
          * Add default posts and comments RSS feed links to <head>.
@@ -55,7 +55,7 @@ if (! function_exists('fitness_pleasure_setup')) :
          * Add support for two custom navigation menus.
          */
         register_nav_menus(array(
-            'site-menu'   => __('Site Menu', 'fitness_pleasure'),
+            'site-menu'   => __('Site Menu', 'dynamic_bang'),
         ));
 
         /**
@@ -90,13 +90,13 @@ if (! function_exists('fitness_pleasure_setup')) :
         add_theme_support('automatic-feed-links');
 
     }
-endif; // fitness_pleasure_setup
-add_action('after_setup_theme', 'fitness_pleasure_setup');
+endif; // dynamic_bang_setup
+add_action('after_setup_theme', 'dynamic_bang_setup');
 
 
 // Enqueues scripts and styles.
 
-function fitness_pleasure_scripts()
+function dynamic_bang_scripts()
 {
     // Add Tailwind
     wp_enqueue_style(
@@ -108,7 +108,7 @@ function fitness_pleasure_scripts()
 
     // Enqueue Style.css
     wp_enqueue_style(
-        'fitness_pleasure',
+        'dynamic_bang',
         get_template_directory_uri() . '/style.css'
     );
 
@@ -160,16 +160,16 @@ function fitness_pleasure_scripts()
     );
 
 }
-add_action('wp_enqueue_scripts', 'fitness_pleasure_scripts');
+add_action('wp_enqueue_scripts', 'dynamic_bang_scripts');
 
 // After Setup
 // Load the textdomain
 
-function fitness_pleasure_load_textdomain()
+function dynamic_bang_load_textdomain()
 {
-    load_theme_textdomain('fitness_pleasure', get_template_directory() . '/languages');
+    load_theme_textdomain('dynamic_bang', get_template_directory() . '/languages');
 }
-add_action('after_setup_theme', 'fitness_pleasure_load_textdomain');
+add_action('after_setup_theme', 'dynamic_bang_load_textdomain');
 
 // Supported post formats when custom post types => add here
 
@@ -234,11 +234,11 @@ add_filter('pre_get_posts', 'pd_search_posts_per_page');
 // Customizer Customization Section
 
 // Add custom brands images on front page
-function fitness_pleasure_customize_brands($wp_customize)
+function dynamic_bang_customize_brands($wp_customize)
 {
 
     $wp_customize->add_section('hero_image_section', array(
-        'title' => __('Hero Image', 'fitness_pleasure'),
+        'title' => __('Hero Image', 'dynamic_bang'),
         'priority' => 30,
     ));
 
@@ -250,14 +250,14 @@ function fitness_pleasure_customize_brands($wp_customize)
 
     // Add the image control
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_image', array(
-        'label' => __('Upload Hero Image', 'fitness_pleasure'),
+        'label' => __('Upload Hero Image', 'dynamic_bang'),
         'section' => 'hero_image_section',
         'settings' => 'hero_image',
     )));
 
     // Add a section for the brands images
     $wp_customize->add_section('brands_images_section', array(
-        'title' => __('Brands Images', 'fitness_pleasure'),
+        'title' => __('Brands Images', 'dynamic_bang'),
         'priority' => 30,
     ));
 
@@ -267,7 +267,7 @@ function fitness_pleasure_customize_brands($wp_customize)
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'brand_image_1_control', array(
-        'label' => __('Upload 1st Image', 'fitness_pleasure'),
+        'label' => __('Upload 1st Image', 'dynamic_bang'),
         'section' => 'brands_images_section',
         'settings' => 'brand_image_1',
     )));
@@ -277,7 +277,7 @@ function fitness_pleasure_customize_brands($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control('brand_url_1', array(
-        'label' => __('URL for Brand 1', 'fitness_pleasure'),
+        'label' => __('URL for Brand 1', 'dynamic_bang'),
         'section' => 'brands_images_section', // Replace with your section
         'type' => 'url',
     ));
@@ -287,7 +287,7 @@ function fitness_pleasure_customize_brands($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'brand_image_2_control', array(
-       'label' => __('Upload 2n Image', 'fitness_pleasure'),
+       'label' => __('Upload 2n Image', 'dynamic_bang'),
        'section' => 'brands_images_section',
        'settings' => 'brand_image_2',
     )));
@@ -297,7 +297,7 @@ function fitness_pleasure_customize_brands($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control('brand_url_2', array(
-        'label' => __('URL for Brand 2', 'fitness_pleasure'),
+        'label' => __('URL for Brand 2', 'dynamic_bang'),
         'section' => 'brands_images_section',
         'type' => 'url',
     ));
@@ -307,7 +307,7 @@ function fitness_pleasure_customize_brands($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'brand_image_3_control', array(
-       'label' => __('Upload 3rd Image', 'fitness_pleasure'),
+       'label' => __('Upload 3rd Image', 'dynamic_bang'),
        'section' => 'brands_images_section',
        'settings' => 'brand_image_3',
     )));
@@ -317,7 +317,7 @@ function fitness_pleasure_customize_brands($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control('brand_url_3', array(
-        'label' => __('URL for Brand 3', 'fitness_pleasure'),
+        'label' => __('URL for Brand 3', 'dynamic_bang'),
         'section' => 'brands_images_section',
         'type' => 'url',
     ));
@@ -327,7 +327,7 @@ function fitness_pleasure_customize_brands($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'brand_image_4_control', array(
-       'label' => __('Upload 4th Image', 'fitness_pleasure'),
+       'label' => __('Upload 4th Image', 'dynamic_bang'),
        'section' => 'brands_images_section',
        'settings' => 'brand_image_4',
     )));
@@ -337,20 +337,20 @@ function fitness_pleasure_customize_brands($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control('brand_url_4', array(
-        'label' => __('URL for Brand 4', 'fitness_pleasure'),
+        'label' => __('URL for Brand 4', 'dynamic_bang'),
         'section' => 'brands_images_section',
         'type' => 'url',
     ));
 
 }
-add_action('customize_register', 'fitness_pleasure_customize_brands');
+add_action('customize_register', 'dynamic_bang_customize_brands');
 
 // Add custom title on the front page
-function fitness_pleasure_customize_register($wp_customize)
+function dynamic_bang_customize_register($wp_customize)
 {
     // Add a section for the front page title
     $wp_customize->add_section('front_page_title_section', array(
-        'title' => __('Front Page Title', 'fitness_pleasure'),
+        'title' => __('Front Page Title', 'dynamic_bang'),
         'priority' => 30,
     ));
 
@@ -362,7 +362,7 @@ function fitness_pleasure_customize_register($wp_customize)
 
     // Add the image control
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'front_page_title', array(
-        'label' => __('Set your front page title', 'fitness_pleasure'),
+        'label' => __('Set your front page title', 'dynamic_bang'),
         'section' => 'front_page_title_section',
         'settings' => 'front_page_title',
         'type' => 'text'
@@ -377,13 +377,13 @@ function fitness_pleasure_customize_register($wp_customize)
 
     // Add the image control
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'front_page_subtitle', array(
-        'label' => __('Set your front page subtitle', 'fitness_pleasure'),
+        'label' => __('Set your front page subtitle', 'dynamic_bang'),
         'section' => 'front_page_title_section',
         'settings' => 'front_page_subtitle',
         'type' => 'text'
     )));
 }
-add_action('customize_register', 'fitness_pleasure_customize_register');
+add_action('customize_register', 'dynamic_bang_customize_register');
 
 //Page menu set suggestion for bettwer UX
 
@@ -392,7 +392,7 @@ function my_customizer_menu_alert($wp_customize)
     // Check if a menu is set
     if (!has_nav_menu('site-menu')) {
         $wp_customize->add_section('menu_alert_section', array(
-            'title'    => __('⚠️ Navigation Notice', 'fitness_pleasure'),
+            'title'    => __('⚠️ Navigation Notice', 'dynamic_bang'),
             'priority' => 1,
         ));
 
@@ -404,10 +404,10 @@ function my_customizer_menu_alert($wp_customize)
             $wp_customize,
             'menu_alert',
             array(
-                'label'       => __('No Menu Assigned', 'fitness_pleasure'),
+                'label'       => __('No Menu Assigned', 'dynamic_bang'),
                 'section'     => 'menu_alert_section',
                 'type'        => 'hidden',
-                'description' => __('<strong>⚠️Set a navigation menu</strong> in <a href="' . admin_url('nav-menus.php') . '" target="_blank">Appearance → Menus</a> for a better experience.', 'fitness_pleasure'),
+                'description' => __('<strong>⚠️Set a navigation menu</strong> in <a href="' . admin_url('nav-menus.php') . '" target="_blank">Appearance → Menus</a> for a better experience.', 'dynamic_bang'),
             )
         ));
     }
@@ -416,10 +416,10 @@ add_action('customize_register', 'my_customizer_menu_alert');
 
 // WSform integration
 
-function fitness_pleasure_customize_wsforms($wp_customize)
+function dynamic_bang_customize_wsforms($wp_customize)
 {
     $wp_customize->add_section('wsform_section', array(
-        'title'    => __('WSform Integration', 'fitness_pleasure'),
+        'title'    => __('WSform Integration', 'dynamic_bang'),
         'priority' => 120,
     ));
 
@@ -429,7 +429,7 @@ function fitness_pleasure_customize_wsforms($wp_customize)
     ));
 
     $wp_customize->add_control('show_newsletter_control', array(
-        'label'    => __('Show Newsletter Form', 'fitness_pleasure'),
+        'label'    => __('Show Newsletter Form', 'dynamic_bang'),
         'section'  => 'wsform_section',
         'settings' => 'show_newsletter',
         'type'     => 'checkbox',
@@ -441,10 +441,10 @@ function fitness_pleasure_customize_wsforms($wp_customize)
     ));
 
     $wp_customize->add_control('newsletter_wsform_id', array(
-        'label' => __('Newsletter WSform ID', 'fitness_pleasure'),
+        'label' => __('Newsletter WSform ID', 'dynamic_bang'),
         'section' => 'wsform_section',
         'type' => 'text',
-        'description' => __('Enter the WS Form ID for your newsletter form.', 'fitness_pleasure'),
+        'description' => __('Enter the WS Form ID for your newsletter form.', 'dynamic_bang'),
     ));
 
     $wp_customize->add_setting('contactform_wsform_id', array(
@@ -453,10 +453,10 @@ function fitness_pleasure_customize_wsforms($wp_customize)
     ));
 
     $wp_customize->add_control('contactform_wsform_id', array(
-        'label' => __('Contact Form WSform ID', 'fitness_pleasure'),
+        'label' => __('Contact Form WSform ID', 'dynamic_bang'),
         'section' => 'wsform_section',
         'type' => 'text',
-        'description' => __('Enter the WS Form ID for your contact form. ', 'fitness_pleasure'),
+        'description' => __('Enter the WS Form ID for your contact form. ', 'dynamic_bang'),
     ));
 
     $wp_customize->add_setting('wsform_style_file', array(
@@ -465,7 +465,7 @@ function fitness_pleasure_customize_wsforms($wp_customize)
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'wsform_style_file_control', array(
-        'label'    => __('Download WSForm Style JSON', 'fitness_pleasure'),
+        'label'    => __('Download WSForm Style JSON', 'dynamic_bang'),
         'section'  => 'wsform_section',
         'settings' => 'wsform_style_file',
         'type'     => 'hidden',
@@ -473,14 +473,14 @@ function fitness_pleasure_customize_wsforms($wp_customize)
     )));
 
 }
-add_action('customize_register', 'fitness_pleasure_customize_wsforms');
+add_action('customize_register', 'dynamic_bang_customize_wsforms');
 
 // Footer Widget on/off
 
 function mytheme_customize_social_widget($wp_customize)
 {
     $wp_customize->add_section('social_widget_section', array(
-        'title'    => __('Social Media Widget', 'fitness_pleasure'),
+        'title'    => __('Social Media Widget', 'dynamic_bang'),
         'priority' => 120,
     ));
 
@@ -490,11 +490,11 @@ function mytheme_customize_social_widget($wp_customize)
     ));
 
     $wp_customize->add_control('show_social_widget_control', array(
-        'label'    => __('Show Social Media Widget', 'fitness_pleasure'),
+        'label'    => __('Show Social Media Widget', 'dynamic_bang'),
         'section'  => 'social_widget_section',
         'settings' => 'show_social_widget',
         'type'     => 'checkbox',
-        'description' => __('<strong>Use the Wordpress Social Media Widget <a href="' . admin_url('widgets.php') . '" target="_blank">Appearance → Widgets</a> for a better user experience.', 'fitness_pleasure'),
+        'description' => __('<strong>Use the Wordpress Social Media Widget <a href="' . admin_url('widgets.php') . '" target="_blank">Appearance → Widgets</a> for a better user experience.', 'dynamic_bang'),
     ));
 }
 add_action('customize_register', 'mytheme_customize_social_widget');
