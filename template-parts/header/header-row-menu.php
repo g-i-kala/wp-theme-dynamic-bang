@@ -15,4 +15,6 @@
         );
     ?>
 
+    <?php get_template_part('/template-parts/components/button', 'newsletter'); ?>
+
 </div>
