@@ -54,6 +54,7 @@
     --font-dmsans: Dmsans, sans-serif;
     --font-montserrat: Montserrat, sans-serif;
     --color-primary: oklch(73.5% 0.1825 51.54);
+    --color-secondary: oklch(84.0% 0.1554 72.61);
     --color-accent: oklch(48.0% 0.1347 38.12);
   }
 }
@@ -677,6 +678,9 @@
   }
   .text-primary {
     color: var(--color-primary);
+  }
+  .text-secondary {
+    color: var(--color-secondary);
   }
   .text-white {
     color: var(--color-white);
