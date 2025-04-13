@@ -13,15 +13,10 @@
     --color-navy: oklch(39.5% 0.0463 282.33);  
     --color-accent: oklch(48.0% 0.1347 38.12);
     --color-lightgray: oklch(0.775 0.004 88.49);
-    --color-darkgray: oklch(0.512 0.008 88.49);
+    --color-darkgray: oklch(0.512 0.008 88.49)
   }
 
   @font-face {
     font-family: 'Dmsans';
     src: url('../fonts/DM_Sans/DMSans-Italic-VariableFont.ttf') format('truetype');
-  }
-
-  @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
   }

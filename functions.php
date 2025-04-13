@@ -120,8 +120,8 @@ function dynamic_bang_scripts()
         null // Optional: no version number
     );
 
-    wp_enqueue_style('wp-block-library');
-    wp_enqueue_style('wp-block-library-theme');
+    // wp_enqueue_style('wp-block-library');
+    // wp_enqueue_style('wp-block-library-theme');
 
     //jQuery enqueue
     //wp_enqueue_script('jquery');
