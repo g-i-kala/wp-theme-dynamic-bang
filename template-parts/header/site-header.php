@@ -5,7 +5,6 @@
     <div class="content__container bg-white tracking-wide">
 
         <?php get_template_part('/template-parts/header/header', 'row-menu'); ?>
-        <?php //get_template_part('/template-parts/header/header','row-widgets');?>
 
     </div>
 
