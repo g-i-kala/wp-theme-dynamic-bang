@@ -21,6 +21,13 @@
     box-sizing: border-box;
 } */
 
+.bg__image {
+    background-image: url('http://localhost:8002/wp-content/themes/dynamic_bang/assets/images/triangle_bckg.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+}
+
 /* WCAG */
 .screen-reader-text {
     position: absolute;
