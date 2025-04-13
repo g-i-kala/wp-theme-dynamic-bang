@@ -1,4 +1,4 @@
-<div class="w-full p-4 flex flex-col md:flex-row bg-white">
+<div class="w-full p-4 flex flex-col md:flex-row bg-transparent">
     
     <div class="w-full md:auto p-4 flex flex-row justify-between items-center flex-grow">
         <!-- Branding -->
