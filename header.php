@@ -17,7 +17,7 @@
 
 <!-- open the body -->
 
-<body <?php body_class("font-dmsans"); ?>>
+<body <?php body_class("font-dmsans border-2 border-red-500 "); ?>>
     <?php wp_body_open(); ?>
 
     <div id="page" class="site flex flex-col justify-center min-h-screen bg__image bg-[url(<?= get_template_directory_uri() ?>/assets/images/triangle_bckg.png)] bg-no-repeat bg-contain bg-top">
