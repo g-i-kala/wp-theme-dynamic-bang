@@ -12,10 +12,9 @@
         x-show="openShare" 
         @click.outside="openShare = false" 
         x-transition>
-        <button class="share-button absolute -left-40 w-[10rem] px-6 py-3 bg-white shadow-2xl font-montserrat text-sm shadow-color-black hover:cursor-pointer" @click="showIcons = !showIcons">
-            <div class="search-form-button py-4 border-black">
-                <?php get_search_form(array('aria_label' => __('Site search', 'dynamic_bang'))); ?>
-            </div>
-        </button>
+        <div class="search-form rounded-xl py-2 px-2 border-black absolute -left-40 w-[15rem] bg-white shadow-2xl font-montserrat text-sm shadow-color-black hover:cursor-pointer">
+            <?php get_search_form(array('aria_label' => __('Site search', 'dynamic_bang'))); ?>
+        </div>
+
     </div>
 </div>
