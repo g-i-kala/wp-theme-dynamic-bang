@@ -49,7 +49,7 @@ $menu_id = isset($args['menu_id']) ? esc_attr($args['menu_id']) : 'navbar';
             <?php
             wp_nav_menu(array(
                 'theme_location' => 'site-menu',
-                'menu_class' => "site__menu flex $menu_class font-bold text-white text-center *:px-2 *:hover:text-mint *:[&.current-menu-item]:text-black", // each ul element class
+                'menu_class' => "site__menu flex $menu_class font-bold text-center *:px-2 *:hover:text-mint *:[&.current-menu-item]:text-black", // each ul element class
             ));
 ?>
         </nav>
