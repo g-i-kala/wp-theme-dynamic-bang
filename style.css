@@ -21,6 +21,7 @@
     box-sizing: border-box;
 } */
 
+
 .bg__image {
     background-image: url('http://localhost:8002/wp-content/themes/dynamic_bang/assets/images/triangle_bckg.png');
     background-repeat: no-repeat;
@@ -59,12 +60,12 @@
     width: 80%;
 }
 
-.nav-links {
+/* .nav-links {
     width: 100%;
     display: flex;
     align-items: center; 
     justify-content: space-between; 
-}
+} */
 
 /* responsivness */
 @media screen and (max-width: 1200px) {
@@ -81,6 +82,10 @@
 }
 @media screen and (max-width: 786px) {
      
+    html, body {
+        overflow-x: hidden;
+        }
+
     .content__container {
         width: 100%;
     }

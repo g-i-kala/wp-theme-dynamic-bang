@@ -19,13 +19,18 @@ $menu_id = isset($args['menu_id']) ? esc_attr($args['menu_id']) : 'navbar';
 
     <!-- Mobile Full Screen Menu-->
     <div x-cloak x-show="mobileMenuIsOpen" id="full-screen-menu" role="navigation" x-show="mobileMenuIsOpen"
-        x-transition
+        x-transition:enter="transition-opacity duration-300 ease-out"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition-opacity duration-300 ease-in"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
         aria-label="<?php _e('Main Navigation', 'dynamic_bang'); ?>">
 
-        <div class="fixed top-0 left-0 w-screen h-screen bg-white z-50 flex items-center justify-center">
+        <div class="fixed top-0 left-0 w-full h-screen bg-white z-100 flex items-center justify-center">
             <button @click="mobileMenuIsOpen=!mobileMenuIsOpen" id="mobile-close"
                 aria-label="<?php _e('Close navigation', 'dynamic_bang'); ?>"
-                class="absolute top-10 right-10 text-2xl text-primary font-bold hover:cursor-pointer">
+                class="absolute top-10 right-10 text-2xl text-primary font-bold pointer-events-none">
                 X
             </button>
             <nav role="navigation" @click.away="mobileMenuIsOpen = false"
@@ -42,15 +47,16 @@ $menu_id = isset($args['menu_id']) ? esc_attr($args['menu_id']) : 'navbar';
     </div>
 
 
-    <div id="<?php $menu_id ?>" class="site-nav header-menu-container hidden lg:block">
+    <div id="<?php $menu_id ?>"
+        class="site-nav header-menu-container hidden lg:block">
         <nav role="navigation"
             aria-label="<?php _e('Main Navigation', 'dynamic_bang'); ?>"
             class="navbar ">
             <?php
             wp_nav_menu(array(
-                'theme_location' => 'site-menu',
-                'menu_class' => "site__menu flex $menu_class font-bold text-center *:px-2 *:hover:text-mint *:[&.current-menu-item]:text-black", // each ul element class
-            ));
+'theme_location' => 'site-menu',
+'menu_class' => "site__menu flex $menu_class font-bold text-center *:px-2 *:hover:text-mint *:[&.current-menu-item]:text-black", // each ul element class
+));
 ?>
         </nav>
     </div>
