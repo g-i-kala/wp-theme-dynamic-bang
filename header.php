@@ -16,7 +16,7 @@
 
 <!-- open the body -->
 
-<body <?php body_class("font-dmsans border-2 border-red-500 relative border overflow-x-hidden "); ?>>
+<body <?php body_class("font-dmsans"); ?>>
     <?php wp_body_open(); ?>
 
     <div id="page" class="site flex flex-col justify-center min-h-screen max-x-screen overflow-hidden bg__image ">

@@ -534,3 +534,14 @@ function custom_comment_form($fields)
 }
 
 add_filter('comment_form_default_fields', 'custom_comment_form');
+
+
+// Helper DD
+
+function dd($args)
+{
+    echo "<pre>";
+    var_dump($args);
+    echo "</pre>";
+    die();
+}
