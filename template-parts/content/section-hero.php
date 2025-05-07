@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-6 grid-flow-row gap-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 grid-flow-row gap-8">
 
       <?php
         $services = [
