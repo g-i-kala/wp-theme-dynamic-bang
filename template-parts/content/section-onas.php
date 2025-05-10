@@ -10,7 +10,7 @@
           Poznajmy się.
         </p>
         <h1 class="w-full text-[4rem] font-bold text-sm/20">
-          O Mnie
+          O Nas
         </h1>
         <p class="w-full text-xl text-black font-semibold my-4">
           Mam na imię Marta. Kiedyś zdobywałam medale w fitness, dziś pomagam innym zdobywać własne podium. Dynamic Bang

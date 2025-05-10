@@ -3,10 +3,10 @@
 
     <div class="section-bottom w-full md:w-1/2">
       <p class="w-full text-[2rem] text-sm/10 text-primary font-bold">
-        Poznajmy się.
+        Poznaj Nas
       </p>
       <h1 class="w-full text-[4rem] font-bold text-sm/20">
-        Team
+       Team
       </h1>
       <p class="w-full text-xl text-black font-semibold my-4">
         Oto zespół, który nie tylko zna się na rzeczy, ale przede wszystkim kocha ludzi.
