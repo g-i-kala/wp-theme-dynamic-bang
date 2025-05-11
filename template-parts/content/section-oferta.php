@@ -1,11 +1,11 @@
-<section class="section h-screen flex flex-col justify-center" id="oferta">
+<section class="section h-min-screen flex flex-col justify-center" id="oferta">
   <div class="container space-y-16">
     <div class="section-header w-full md:w-1/2">
       <p class="w-full text-[2rem] text-sm/10 text-primary font-bold">
-        Razem do celu!
+        🏳️‍🌈 Razem do celu!
       </p>
       <h1 class="w-full text-[4rem] font-bold text-sm/20">
-        Oferta
+        Oferta 
       </h1>
       <p class="w-full text-xl text-black font-bold my-4">
         Odkryj naszą różnorodną ofertę, która łączy holistyczne podejście do zdrowia i kondycji. Niezależnie od tego,
@@ -18,48 +18,56 @@
     <div class="grid grid-cols-1 md:grid-cols-3 grid-flow-row gap-8">
 
       <?php
+
        $services = [
         [
             'href' => '#',
-            'text' => 'Treningi personalne',
+            'title' => 'Treningi personalne',
             'icon' => 'fa-dumbbell text-secondary',
             'description' => 'Indywidualny program, elastyczne godziny, cel: Twój komfort',
-            'aos' => "data-aos=fade data-aos-delay=200"
+            'aos' => "data-aos=fade data-aos-delay=200",
+            'modal_content' => 'modal-offer-1',
+
         ],
         [
             'href' => '#',
-            'text' => 'Konsultacje dietetyczne',
+            'title' => 'Konsultacje dietetyczne',
             'icon' => 'fa-apple-alt text-mint',
             'description' => 'We współpracy z dietetykami klinicznymi – bo forma to więcej niż kalorie',
-            'aos' => "data-aos=fade data-aos-delay=400"
+            'aos' => "data-aos=fade data-aos-delay=400",
+            'modal_content' => 'modal-offer-2',
         ],
         [
             'href' => '#',
-            'text' => 'Kalistenika i mobilność',
+            'title' => 'Kalistenika i mobilność',
             'icon' => 'fa-person-running text-dark-accent',
             'description' => 'Ruch bez sprzętu – pełna kontrola nad ciałem i świadomość',
-            'aos' => "data-aos=fade data-aos-delay=600"
+            'aos' => "data-aos=fade data-aos-delay=600",
+            'modal_content' => 'modal-offer-3',
         ],
         [
             'href' => '#',
-            'text' => 'Tai Chi i oddech',
+            'title' => 'Tai Chi i oddech',
             'icon' => 'fa-wind text-mint',
             'description' => 'Zajęcia z Wojtkiem – łączenie ruchu z relaksem',
-            'aos' => "data-aos=fade data-aos-delay=800"
+            'aos' => "data-aos=fade data-aos-delay=800",
+            'modal_content' => 'modal-offer-4',
         ],
         [
             'href' => '#',
-            'text' => 'Sauna i regeneracja',
+            'title' => 'Sauna i regeneracja',
             'icon' => 'fa-hot-tub-person text-navy',
             'description' => 'Po treningu – czas dla ciała i głowy. Sauna, muzyka, chill',
-            'aos' => "data-aos=fade data-aos-delay=1000"
+            'aos' => "data-aos=fade data-aos-delay=1000",
+            'modal_content' => 'modal-offer-5',
         ],
         [
             'href' => '#',
-            'text' => 'Zajęcia grupowe dla kobiet',
+            'title' => 'Zajęcia grupowe dla kobiet',
             'icon' => 'fa-users text-red-200',
             'description' => 'Kameralne grupy, wspierająca atmosfera',
-            'aos' => "data-aos=fade data-aos-delay=1200"
+            'aos' => "data-aos=fade data-aos-delay=1200",
+            'modal_content' => 'modal-offer-6',
         ]
     ];
 

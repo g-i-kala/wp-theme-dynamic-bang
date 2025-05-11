@@ -5,10 +5,11 @@
 ?>
 <?php get_header(); ?>
 <main id="primary" class="site-main">
-	<div class="flex flex-col">
+	<div class="flex flex-col space-y-10">
 
 		<?php get_template_part('template-parts/content/section', 'hero'); ?>
 		<?php get_template_part('template-parts/content/section', 'onas'); ?>
+		<?php get_template_part('template-parts/content/section', 'team') ?>
 		<?php get_template_part('template-parts/content/section', 'oferta'); ?>
 		<?php get_template_part('template-parts/content/section', 'trening'); ?>
 		<?php get_template_part('template-parts/content/section', 'opinie'); ?>
