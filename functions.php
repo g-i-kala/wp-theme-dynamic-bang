@@ -87,8 +87,6 @@ if (! function_exists('dynamic_bang_setup')) :
             'unlink-homepage-logo' => true,
             ));
 
-        add_theme_support('automatic-feed-links');
-
     }
 endif; // dynamic_bang_setup
 add_action('after_setup_theme', 'dynamic_bang_setup');
@@ -171,30 +169,17 @@ function enqueue_aos()
     wp_enqueue_script('custom-aos', get_template_directory_uri() . '/assets/js/aos.js', array('aos-js'), null, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_aos');
-// After Setup
-// Load the textdomain
-
-function dynamic_bang_load_textdomain()
-{
-    load_theme_textdomain('dynamic_bang', get_template_directory() . '/languages');
-}
-add_action('after_setup_theme', 'dynamic_bang_load_textdomain');
-
-// Supported post formats when custom post types => add here
-
-function themename_post_formats_setup()
-{
-    add_theme_support('post-formats', array( 'aside', 'gallery', 'image' ));
-}
-add_action('after_setup_theme', 'themename_post_formats_setup');
 
 
 // Links all Post Thumbnails on your website to the Post Permalink
 
-add_filter('post_thumbnail_html', 'my_post_image_html', 10, 3);
-function my_post_image_html($html, $post_id, $post_image_id)
+add_filter('post_thumbnail_html', 'dynamic_bang_post_thumbnail_html', 10, 3);
+function dynamic_bang_post_thumbnail_html($html, $post_id, $post_image_id)
 {
-    $html = '<a href="' . get_permalink($post_id) . '">' . $html . '</a>';
+    // Only wrap in link if not already wrapped
+    if (false === strpos($html, '<a ')) {
+        $html = '<a href="' . esc_url(get_permalink($post_id)) . '">' . $html . '</a>';
+    }
     return $html;
 }
 
@@ -212,7 +197,7 @@ add_filter('image_editor_output_format', 'wporg_image_editor_output_format');
 
 // Sidebar registartion
 
-function my_register_sidebars()
+function dynamic_bang_register_sidebars()
 {
     /* Register the 'primary' sidebar. */
     register_sidebar(
@@ -227,18 +212,18 @@ function my_register_sidebars()
         )
     );
 }
-add_action('widgets_init', 'my_register_sidebars');
+add_action('widgets_init', 'dynamic_bang_register_sidebars');
 
 // Limit search results to 9
 
-function pd_search_posts_per_page($query)
+function dynamic_bang_search_posts_per_page($query)
 {
     if ($query->is_search) {
         $query->set('posts_per_page', '6');
     }
     return $query;
 }
-add_filter('pre_get_posts', 'pd_search_posts_per_page');
+add_filter('pre_get_posts', 'dynamic_bang_search_posts_per_page');
 
 // Customizer Customization Section
 
@@ -369,13 +354,13 @@ function dynamic_bang_customize_register($wp_customize)
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
-    // Add the image control
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'front_page_title', array(
+    // Add the text control
+    $wp_customize->add_control('front_page_title', array(
         'label' => __('Set your front page title', 'dynamic_bang'),
         'section' => 'front_page_title_section',
         'settings' => 'front_page_title',
         'type' => 'text'
-    )));
+    ));
 
     // Add a section for the front page subtitle
 
@@ -384,19 +369,19 @@ function dynamic_bang_customize_register($wp_customize)
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
-    // Add the image control
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'front_page_subtitle', array(
+    // Add the text control
+    $wp_customize->add_control('front_page_subtitle', array(
         'label' => __('Set your front page subtitle', 'dynamic_bang'),
         'section' => 'front_page_title_section',
         'settings' => 'front_page_subtitle',
         'type' => 'text'
-    )));
+    ));
 }
 add_action('customize_register', 'dynamic_bang_customize_register');
 
 //Page menu set suggestion for bettwer UX
 
-function my_customizer_menu_alert($wp_customize)
+function dynamic_bang_customizer_menu_alert($wp_customize)
 {
     // Check if a menu is set
     if (!has_nav_menu('site-menu')) {
@@ -421,7 +406,7 @@ function my_customizer_menu_alert($wp_customize)
         ));
     }
 }
-add_action('customize_register', 'my_customizer_menu_alert');
+add_action('customize_register', 'dynamic_bang_customizer_menu_alert');
 
 // WSform integration
 
@@ -469,7 +454,7 @@ function dynamic_bang_customize_wsforms($wp_customize)
     ));
 
     $wp_customize->add_setting('wsform_style_file', array(
-        'defaul' => '',
+        'default' => '',
         'transport' => 'refresh',
     ));
 
@@ -486,7 +471,7 @@ add_action('customize_register', 'dynamic_bang_customize_wsforms');
 
 // Footer Widget on/off
 
-function mytheme_customize_social_widget($wp_customize)
+function dynamic_bang_customize_social_widget($wp_customize)
 {
     $wp_customize->add_section('social_widget_section', array(
         'title'    => __('Social Media Widget', 'dynamic_bang'),
@@ -506,7 +491,7 @@ function mytheme_customize_social_widget($wp_customize)
         'description' => __('<strong>Use the Wordpress Social Media Widget <a href="' . admin_url('widgets.php') . '" target="_blank">Appearance → Widgets</a> for a better user experience.', 'dynamic_bang'),
     ));
 }
-add_action('customize_register', 'mytheme_customize_social_widget');
+add_action('customize_register', 'dynamic_bang_customize_social_widget');
 
 // Remove prefixes
 
@@ -536,21 +521,10 @@ function get_random_background_image($file_name, $extension, $max_images)
 
 // Comment form fields filter
 
-function custom_comment_form($fields)
+function dynamic_bang_comment_form($fields)
 {
     unset($fields['url']);
     return $fields;
 }
 
-add_filter('comment_form_default_fields', 'custom_comment_form');
-
-
-// Helper DD
-
-function dd($args)
-{
-    echo "<pre>";
-    var_dump($args);
-    echo "</pre>";
-    die();
-}
+add_filter('comment_form_default_fields', 'dynamic_bang_comment_form');
