@@ -10,7 +10,7 @@ $modal_content = isset($args['modal_content']) ? $args['modal_content'] : '';
 <div x-data="{ showModal: false }">
   
   <div class="<?php echo esc_attr($class) ?> flex flex-col items-center justify-between h-full text-center font-semibold px-10 py-6 rounded-xl shadow-xl hover:scale-105 hover:cursor-pointer transition-transform duration-300 space-y-4"
-  <?= esc_attr($aos) ?> > 
+  <?php echo esc_attr($aos); ?> >
     <?php if ($icon) : ?>
     <i class="fas <?php echo esc_attr($icon); ?> text-4xl"></i>
     <?php endif; ?>

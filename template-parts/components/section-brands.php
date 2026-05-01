@@ -21,8 +21,8 @@ for ($i = 1; $i <= 4; $i++) {
     <div class="brands__wrapper grid grid-cols-2 md:grid-cols-4 gap-4">
         <?php foreach ($brands as $brand): ?>
             <div class="w-full flex justify-center content-center p-8">
-                <a href="<?= $brand['url'] ?>" target="_blank" rel="noopener noreferrer">
-                    <img src="<?= $brand['image'] ?>" alt="<?= $brand['alt'] ?>" />
+                <a href="<?php echo esc_url($brand['url']); ?>" target="_blank" rel="noopener noreferrer">
+                    <img src="<?php echo esc_url($brand['image']); ?>" alt="<?php echo esc_attr($brand['alt']); ?>" />
                 </a>
             </div>
         <?php endforeach; ?>

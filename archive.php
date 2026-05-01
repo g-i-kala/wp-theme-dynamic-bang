@@ -25,7 +25,7 @@ get_header(); ?>
 
 			<?php else : ?>
 			<div class="text-base py-2">
-				<p><?php esc_html_e('Select month, category or use the search box.', 'dynamic_bang'); ?>
+				<p><?php esc_html_e('Select month, category or use the search box.', 'dynamic-bang'); ?>
 				</p>
 			</div>
 			<?php endif; ?>
@@ -33,7 +33,7 @@ get_header(); ?>
 
 		<!-- Search Form -->
 		<div class="search-form-archive py-4 border-t-2 border-black">
-			<?php get_search_form(array('aria_label' => __('Site search', 'dynamic_bang'))); ?>
+			<?php get_search_form(array('aria_label' => __('Site search', 'dynamic-bang'))); ?>
 		</div>
 
 		<!-- Archive Listing -->

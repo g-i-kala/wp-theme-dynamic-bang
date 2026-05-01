@@ -1,15 +1,25 @@
 /*
  * Theme Name: Dynamic Bang
- * Author: Kalissima
- * Text Domain: dynamic_bang
- * Domain Path: /languages
+ * Theme URI: 
+ * Description: A modern WordPress theme with Tailwind CSS
  * Version: 1.0.0
+ * Author: Kalissima
+ * Author URI: 
+ * License: GNU General Public License v2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: dynamic-bang
+ * Domain Path: /languages
+ * Tested up to: 6.7
+ * Requires PHP: 7.4
+ * Dynamic Bang WordPress Theme, Copyright 2026 Your Name
+ * Dynamic Bang is distributed under the terms of the GNU General Public License v2 or later
  */
 
-@font-face{
-    font-family: 'DMSans';
-    src: url('assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf');
-    src: local('☺'),
+@font-face {
+  font-family: 'DMSans';
+  src: url('assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf');
+  src:
+    local('☺'),
     url('assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf') format('truetype');
 }
 
@@ -22,48 +32,47 @@
     box-sizing: border-box;
 } */
 
-
 .bg__image {
-    background-image: url('http://localhost:8002/wp-content/themes/dynamic_bang/assets/images/triangle_bckg.png');
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: contain;
+  background-image: url('http://localhost:8002/wp-content/themes/dynamic_bang/assets/images/triangle_bckg.png');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
 }
 
 /* Alpine.js x-cloak - hide elements before Alpine initializes */
 [x-cloak] {
-    display: none !important;
+  display: none !important;
 }
 
 /* WCAG */
 .screen-reader-text {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    clip: rect(0, 0, 0, 0); 
-    overflow: hidden; 
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
 }
 
 .skip-link {
-    position: absolute;
-    top: -40px; 
-    left: 0;
-    background: #fff; 
-    padding: 8px 15px; 
-    z-index: 100;
-    transition: top 0.2s; 
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #fff;
+  padding: 8px 15px;
+  z-index: 100;
+  transition: top 0.2s;
 }
 
 .skip-link:focus {
-    top: 0;
+  top: 0;
 }
 
 .content__container {
-    margin: 0 auto;
-    width: 80%;
+  margin: 0 auto;
+  width: 80%;
 }
 
 /* .nav-links {
@@ -75,62 +84,61 @@
 
 /* responsivness */
 @media screen and (max-width: 1200px) {
-    .post-thumbnail-index img{
-        height: 12rem;
-    }
+  .post-thumbnail-index img {
+    height: 12rem;
+  }
 }
 
 @media screen and (max-width: 992px) {
-
-    .content__container {
-        width: 90%;
-    }
+  .content__container {
+    width: 90%;
+  }
 }
 @media screen and (max-width: 786px) {
-     
-    html, body {
-        overflow-x: hidden;
-        }
+  html,
+  body {
+    overflow-x: hidden;
+  }
 
-    .content__container {
-        width: 100%;
-    }
+  .content__container {
+    width: 100%;
+  }
 }
 
- /* Heading Styling for Gutenberg */
- 
- .page-content h1 {
-    font-size: calc(1.5rem + 2vw); /* Dynamic sizing based on viewport width */
-    font-weight: 700;
-    line-height: 1.2;
+/* Heading Styling for Gutenberg */
+
+.page-content h1 {
+  font-size: calc(1.5rem + 2vw); /* Dynamic sizing based on viewport width */
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .page-content h2 {
-    font-size: calc(1.25rem + 1.5vw);
-    font-weight: 600;
-    line-height: 1.3;
+  font-size: calc(1.25rem + 1.5vw);
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 .page-content h3 {
-    font-size: calc(1rem + 1vw);
-    font-weight: 500;
-    line-height: 1.4;
+  font-size: calc(1rem + 1vw);
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .page-content h4 {
-    font-size: calc(0.875rem + 0.8vw);
-    font-weight: 500;
-    line-height: 1.4;
+  font-size: calc(0.875rem + 0.8vw);
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .page-content h5 {
-    font-size: calc(0.75rem + 0.5vw);
-    font-weight: 400;
-    line-height: 1.5;
+  font-size: calc(0.75rem + 0.5vw);
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .page-content h6 {
-    font-size: calc(0.625rem + 0.4vw);
-    font-weight: 400;
-    line-height: 1.5;
+  font-size: calc(0.625rem + 0.4vw);
+  font-weight: 400;
+  line-height: 1.5;
 }

@@ -12,7 +12,7 @@ $title_size = isset($args['title_size']) ? esc_attr($args['title_size']) : 'text
         class="flex object-contain <?php echo $logo_size; ?> ">
         <a href="<?php echo esc_url(home_url('/')); ?>"
             rel="home"
-            aria-label="<?php esc_attr_e('Site Logo', 'dynamic_bang'); ?>">
+            aria-label="<?php esc_attr_e('Site Logo', 'dynamic-bang'); ?>">
             <?php the_custom_logo(); ?>
         </a>
     </div>

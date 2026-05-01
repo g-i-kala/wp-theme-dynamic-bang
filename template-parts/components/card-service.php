@@ -4,7 +4,7 @@ $text = isset($args['text']) ? $args['text'] : 'Card';
 $class = isset($args['class']) ? $args['class'] : 'bg-gray';
 $icon = isset($args['icon']) ? $args['icon'] : '';
 ?>
-<a href=<?= esc_attr($href) ?>
+<a href="<?php echo esc_url($href); ?>"
     class="<?php echo esc_attr($class) ?> flex flex-col items-center justify-center text-center font-semibold px-10 py-6 rounded-xl shadow-xl hover:scale-105 hover:cursor-pointer transition-transform duration-300 space-y-4">
     <?php if ($icon) : ?>
     <i

@@ -6,7 +6,7 @@
              X
          </button>
          <nav role="navigation"
-             aria-label="<?php _e('Main Navigation', 'dynamic_bang'); ?>"
+             aria-label="<?php _e('Main Navigation', 'dynamic-bang'); ?>"
              class="navbar">
              <?php
             wp_nav_menu(array(

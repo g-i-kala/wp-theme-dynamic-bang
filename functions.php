@@ -34,7 +34,7 @@ if (! function_exists('dynamic_bang_setup')) :
          * Make theme available for translation.
          * Translations can be placed in the /languages/ directory.
          */
-        load_theme_textdomain('dynamic_bang', get_template_directory() . '/languages');
+        load_theme_textdomain('dynamic-bang', get_template_directory() . '/languages');
 
         /**
          * Add default posts and comments RSS feed links to <head>.
@@ -55,7 +55,7 @@ if (! function_exists('dynamic_bang_setup')) :
          * Add support for two custom navigation menus.
          */
         register_nav_menus(array(
-            'site-menu'   => __('Site Menu', 'dynamic_bang'),
+            'site-menu'   => __('Site Menu', 'dynamic-bang'),
         ));
 
         /**
@@ -108,7 +108,7 @@ function dynamic_bang_scripts()
 
     // Enqueue Style.css
     wp_enqueue_style(
-        'dynamic_bang',
+        'dynamic-bang',
         get_template_directory_uri() . '/style.css',
         array(),
         $theme_version
@@ -198,8 +198,8 @@ function dynamic_bang_register_sidebars()
     register_sidebar(
         array(
             'id'            => 'primary',
-            'name'          => __('Social Icons Area'),
-            'description'   => __('Social Icons Area.'),
+            'name'          => __('Social Icons Area', 'dynamic-bang'),
+            'description'   => __('Social Icons Area.', 'dynamic-bang'),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="widget-title">',
@@ -227,7 +227,7 @@ function dynamic_bang_customize_brands($wp_customize)
 {
 
     $wp_customize->add_section('hero_image_section', array(
-        'title' => __('Hero Image', 'dynamic_bang'),
+        'title' => __('Hero Image', 'dynamic-bang'),
         'priority' => 30,
     ));
 
@@ -239,14 +239,14 @@ function dynamic_bang_customize_brands($wp_customize)
 
     // Add the image control
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_image', array(
-        'label' => __('Upload Hero Image', 'dynamic_bang'),
+        'label' => __('Upload Hero Image', 'dynamic-bang'),
         'section' => 'hero_image_section',
         'settings' => 'hero_image',
     )));
 
     // Add a section for the brands images
     $wp_customize->add_section('brands_images_section', array(
-        'title' => __('Brands Images', 'dynamic_bang'),
+        'title' => __('Brands Images', 'dynamic-bang'),
         'priority' => 30,
     ));
 
@@ -256,7 +256,7 @@ function dynamic_bang_customize_brands($wp_customize)
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'brand_image_1_control', array(
-        'label' => __('Upload 1st Image', 'dynamic_bang'),
+        'label' => __('Upload 1st Image', 'dynamic-bang'),
         'section' => 'brands_images_section',
         'settings' => 'brand_image_1',
     )));
@@ -266,7 +266,7 @@ function dynamic_bang_customize_brands($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control('brand_url_1', array(
-        'label' => __('URL for Brand 1', 'dynamic_bang'),
+        'label' => __('URL for Brand 1', 'dynamic-bang'),
         'section' => 'brands_images_section', // Replace with your section
         'type' => 'url',
     ));
@@ -276,7 +276,7 @@ function dynamic_bang_customize_brands($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'brand_image_2_control', array(
-        'label' => __('Upload 2nd Image', 'dynamic_bang'),
+        'label' => __('Upload 2nd Image', 'dynamic-bang'),
        'section' => 'brands_images_section',
        'settings' => 'brand_image_2',
     )));
@@ -286,7 +286,7 @@ function dynamic_bang_customize_brands($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control('brand_url_2', array(
-        'label' => __('URL for Brand 2', 'dynamic_bang'),
+        'label' => __('URL for Brand 2', 'dynamic-bang'),
         'section' => 'brands_images_section',
         'type' => 'url',
     ));
@@ -296,7 +296,7 @@ function dynamic_bang_customize_brands($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'brand_image_3_control', array(
-       'label' => __('Upload 3rd Image', 'dynamic_bang'),
+       'label' => __('Upload 3rd Image', 'dynamic-bang'),
        'section' => 'brands_images_section',
        'settings' => 'brand_image_3',
     )));
@@ -306,7 +306,7 @@ function dynamic_bang_customize_brands($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control('brand_url_3', array(
-        'label' => __('URL for Brand 3', 'dynamic_bang'),
+        'label' => __('URL for Brand 3', 'dynamic-bang'),
         'section' => 'brands_images_section',
         'type' => 'url',
     ));
@@ -316,7 +316,7 @@ function dynamic_bang_customize_brands($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'brand_image_4_control', array(
-       'label' => __('Upload 4th Image', 'dynamic_bang'),
+       'label' => __('Upload 4th Image', 'dynamic-bang'),
        'section' => 'brands_images_section',
        'settings' => 'brand_image_4',
     )));
@@ -326,7 +326,7 @@ function dynamic_bang_customize_brands($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control('brand_url_4', array(
-        'label' => __('URL for Brand 4', 'dynamic_bang'),
+        'label' => __('URL for Brand 4', 'dynamic-bang'),
         'section' => 'brands_images_section',
         'type' => 'url',
     ));
@@ -339,7 +339,7 @@ function dynamic_bang_customize_register($wp_customize)
 {
     // Add a section for the front page title
     $wp_customize->add_section('front_page_title_section', array(
-        'title' => __('Front Page Title', 'dynamic_bang'),
+        'title' => __('Front Page Title', 'dynamic-bang'),
         'priority' => 30,
     ));
 
@@ -351,7 +351,7 @@ function dynamic_bang_customize_register($wp_customize)
 
     // Add the text control
     $wp_customize->add_control('front_page_title', array(
-        'label' => __('Set your front page title', 'dynamic_bang'),
+        'label' => __('Set your front page title', 'dynamic-bang'),
         'section' => 'front_page_title_section',
         'settings' => 'front_page_title',
         'type' => 'text'
@@ -366,7 +366,7 @@ function dynamic_bang_customize_register($wp_customize)
 
     // Add the text control
     $wp_customize->add_control('front_page_subtitle', array(
-        'label' => __('Set your front page subtitle', 'dynamic_bang'),
+        'label' => __('Set your front page subtitle', 'dynamic-bang'),
         'section' => 'front_page_title_section',
         'settings' => 'front_page_subtitle',
         'type' => 'text'
@@ -381,7 +381,7 @@ function dynamic_bang_customizer_menu_alert($wp_customize)
     // Check if a menu is set
     if (!has_nav_menu('site-menu')) {
         $wp_customize->add_section('menu_alert_section', array(
-            'title'    => __('⚠️ Navigation Notice', 'dynamic_bang'),
+            'title'    => __('⚠️ Navigation Notice', 'dynamic-bang'),
             'priority' => 1,
         ));
 
@@ -393,10 +393,10 @@ function dynamic_bang_customizer_menu_alert($wp_customize)
             $wp_customize,
             'menu_alert',
             array(
-                'label'       => __('No Menu Assigned', 'dynamic_bang'),
+                'label'       => __('No Menu Assigned', 'dynamic-bang'),
                 'section'     => 'menu_alert_section',
-                'type'        => 'hidden',
-                'description' => __('<strong>⚠️Set a navigation menu</strong> in <a href="' . admin_url('nav-menus.php') . '" target="_blank">Appearance → Menus</a> for a better experience.', 'dynamic_bang'),
+                'type'        => 'text',
+                'description' => __('<strong>⚠️ Set a navigation menu</strong> in <a href="%s" target="_blank">Appearance → Menus</a> for a better experience.', 'dynamic-bang'),
             )
         ));
     }
@@ -408,7 +408,7 @@ add_action('customize_register', 'dynamic_bang_customizer_menu_alert');
 function dynamic_bang_customize_wsforms($wp_customize)
 {
     $wp_customize->add_section('wsform_section', array(
-        'title'    => __('WSform Integration', 'dynamic_bang'),
+        'title'    => __('WSform Integration', 'dynamic-bang'),
         'priority' => 120,
     ));
 
@@ -419,7 +419,7 @@ function dynamic_bang_customize_wsforms($wp_customize)
     ));
 
     $wp_customize->add_control('show_newsletter_control', array(
-        'label'    => __('Show Newsletter Form', 'dynamic_bang'),
+        'label'    => __('Show Newsletter Form', 'dynamic-bang'),
         'section'  => 'wsform_section',
         'settings' => 'show_newsletter',
         'type'     => 'checkbox',
@@ -431,10 +431,10 @@ function dynamic_bang_customize_wsforms($wp_customize)
     ));
 
     $wp_customize->add_control('newsletter_wsform_id', array(
-        'label' => __('Newsletter WSform ID', 'dynamic_bang'),
+        'label' => __('Newsletter WSform ID', 'dynamic-bang'),
         'section' => 'wsform_section',
         'type' => 'text',
-        'description' => __('Enter the WS Form ID for your newsletter form.', 'dynamic_bang'),
+        'description' => __('Enter the WS Form ID for your newsletter form.', 'dynamic-bang'),
     ));
 
     $wp_customize->add_setting('contactform_wsform_id', array(
@@ -443,10 +443,10 @@ function dynamic_bang_customize_wsforms($wp_customize)
     ));
 
     $wp_customize->add_control('contactform_wsform_id', array(
-        'label' => __('Contact Form WSform ID', 'dynamic_bang'),
+        'label' => __('Contact Form WSform ID', 'dynamic-bang'),
         'section' => 'wsform_section',
         'type' => 'text',
-        'description' => __('Enter the WS Form ID for your contact form. ', 'dynamic_bang'),
+        'description' => __('Enter the WS Form ID for your contact form. ', 'dynamic-bang'),
     ));
 
     $wp_customize->add_setting('wsform_style_file', array(
@@ -456,11 +456,11 @@ function dynamic_bang_customize_wsforms($wp_customize)
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'wsform_style_file_control', array(
-        'label'    => __('Download WSForm Style JSON', 'dynamic_bang'),
+        'label'    => __('Download WSForm Style JSON', 'dynamic-bang'),
         'section'  => 'wsform_section',
         'settings' => 'wsform_style_file',
         'type'     => 'hidden',
-        'description' => sprintf(__('Click here to download the style file: <a href="%s" target="_blank" download>Download JSON</a>', 'dynamic_bang'), esc_url(get_template_directory_uri() . '/assets/wsf-style-fitness-pleasure.json')),
+        'description' => sprintf(__('Click here to download the style file: <a href="%s" target="_blank" download>Download JSON</a>', 'dynamic-bang'), esc_url(get_template_directory_uri() . '/assets/wsf-style-fitness-pleasure.json')),
     )));
 
 }
@@ -471,7 +471,7 @@ add_action('customize_register', 'dynamic_bang_customize_wsforms');
 function dynamic_bang_customize_social_widget($wp_customize)
 {
     $wp_customize->add_section('social_widget_section', array(
-        'title'    => __('Social Media Widget', 'dynamic_bang'),
+        'title'    => __('Social Media Widget', 'dynamic-bang'),
         'priority' => 120,
     ));
 
@@ -482,11 +482,11 @@ function dynamic_bang_customize_social_widget($wp_customize)
     ));
 
     $wp_customize->add_control('show_social_widget_control', array(
-        'label'    => __('Show Social Media Widget', 'dynamic_bang'),
+        'label'    => __('Show Social Media Widget', 'dynamic-bang'),
         'section'  => 'social_widget_section',
         'settings' => 'show_social_widget',
         'type'     => 'checkbox',
-        'description' => __('<strong>Use the Wordpress Social Media Widget <a href="' . admin_url('widgets.php') . '" target="_blank">Appearance → Widgets</a> for a better user experience.', 'dynamic_bang'),
+        'description' => __('<strong>Use the WordPress Social Media Widget</strong> in <a href="%s" target="_blank">Appearance → Widgets</a> for a better user experience.', 'dynamic-bang'),
     ));
 }
 add_action('customize_register', 'dynamic_bang_customize_social_widget');

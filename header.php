@@ -4,7 +4,7 @@
  */
 ?>
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" <?php language_attributes(); ?>>
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
@@ -21,7 +21,7 @@
 
     <div id="page" class="site flex flex-col justify-center min-h-screen max-x-screen overflow-hidden bg__image ">
         <a class="skip-link screen-reader-text" href="#primary">
-            <?php esc_html_e('Skip to content', 'dynamic_bang'); ?>
+            <?php esc_html_e('Skip to content', 'dynamic-bang'); ?>
         </a>
 
         <?php get_template_part('/template-parts/header/site', 'header'); ?>

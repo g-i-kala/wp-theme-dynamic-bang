@@ -10,7 +10,7 @@ get_header(); ?>
 
 		<header class="page-header">
 			<h1 class="page-title">
-				<?php _e('Not Found', 'dynamic_bang'); ?>
+				<?php _e('Not Found', 'dynamic-bang'); ?>
 			</h1>
 		</header>
 
@@ -18,11 +18,11 @@ get_header(); ?>
 			<div class="page-content">
 				<?php get_template_part('/template-parts/components/simple-title', null, array('title' => 'Oops… You Went Too Deep!')); ?>
 				<h2 class="text center w-1/2">
-					<?php _e('Looks like you’ve pushed past the limits… but not in the way we wanted. 😏 This page is lost, but don’t worry—just like in the gym, we can recover!', 'dynamic_bang'); ?>
+					<?php _e('Looks like you’ve pushed past the limits… but not in the way we wanted. 😏 This page is lost, but don’t worry—just like in the gym, we can recover!', 'dynamic-bang'); ?>
 				</h2>
 
 				<div class="search-404 py-8">
-					<p><?php _e('Fancy a search?', 'dynamic_bang'); ?>
+					<p><?php _e('Fancy a search?', 'dynamic-bang'); ?>
 					</p>
 					<?php get_search_form(); ?>
 				</div>

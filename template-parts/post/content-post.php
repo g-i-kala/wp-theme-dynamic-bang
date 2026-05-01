@@ -14,7 +14,7 @@
                 <span
                     class="post-date"><?php echo get_the_date(); ?></span>
                 <span
-                    class="post-author"><?php _e('by', 'dynamic_bang'); ?>
+                    class="post-author"><?php _e('by', 'dynamic-bang'); ?>
                     <?php the_author_posts_link(); ?></span>
             </div>
             <?php get_template_part('/template-parts/components/share-button', 'post') ?>

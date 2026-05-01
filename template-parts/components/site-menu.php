@@ -10,7 +10,7 @@ $menu_id = isset($args['menu_id']) ? esc_attr($args['menu_id']) : 'navbar';
     <button @click="mobileMenuIsOpen = !mobileMenuIsOpen" id="mobile-menu"
         class="mobile-menu block lg:hidden cursor-pointer bg-transparent border-0 p-2.5"
         x-bind:aria-expanded="mobileMenuIsOpen"
-        aria-label="<?php _e('Toggle navigation', 'dynamic_bang') ?>"
+        aria-label="<?php _e('Toggle navigation', 'dynamic-bang') ?>"
         aria-controls="mobileMenu" data-menu-button>
         <span class="bar block w-8 h-1 my-1.5 bg-black 200rounded-lg mx-auto transition-all duration-300"></span>
         <span class="bar block w-8 h-1 my-1.5 bg-black rounded-lg mx-auto transition-all duration-300"></span>
@@ -25,16 +25,16 @@ $menu_id = isset($args['menu_id']) ? esc_attr($args['menu_id']) : 'navbar';
         x-transition:leave="transition-opacity duration-300 ease-in"
         x-transition:leave-start="opacity-100"
         x-transition:leave-end="opacity-0"
-        aria-label="<?php _e('Main Navigation', 'dynamic_bang'); ?>">
+        aria-label="<?php _e('Main Navigation', 'dynamic-bang'); ?>">
 
         <div class="fixed top-0 left-0 w-full h-screen bg-white z-100 flex items-center justify-center">
             <button @click="mobileMenuIsOpen=!mobileMenuIsOpen" id="mobile-close"
-                aria-label="<?php _e('Close navigation', 'dynamic_bang'); ?>"
+                aria-label="<?php _e('Close navigation', 'dynamic-bang'); ?>"
                 class="absolute top-10 right-10 text-2xl text-primary font-bold pointer-events-none">
                 X
             </button>
             <nav role="navigation" @click.away="mobileMenuIsOpen = false"
-                aria-label="<?php _e('Main Navigation', 'dynamic_bang'); ?>"
+                aria-label="<?php _e('Main Navigation', 'dynamic-bang'); ?>"
                 class="navbar">
                 <?php
                 wp_nav_menu(array(
@@ -50,7 +50,7 @@ $menu_id = isset($args['menu_id']) ? esc_attr($args['menu_id']) : 'navbar';
     <div id="<?php $menu_id ?>"
         class="site-nav header-menu-container hidden lg:block">
         <nav role="navigation"
-            aria-label="<?php _e('Main Navigation', 'dynamic_bang'); ?>"
+            aria-label="<?php _e('Main Navigation', 'dynamic-bang'); ?>"
             class="navbar ">
             <?php
             wp_nav_menu(array(

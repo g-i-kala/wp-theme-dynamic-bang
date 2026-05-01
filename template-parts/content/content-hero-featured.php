@@ -9,14 +9,14 @@
             
             <?php $hero_image = get_theme_mod('hero_image'); ?>
             <?php if ($hero_image) : ?>
-                <img src="<?php echo esc_url($hero_image); ?>" alt="<?php esc_attr_e('Hero Image', 'kalissima'); ?>" class="hero-image" />
+                <img src="<?php echo esc_url($hero_image); ?>" alt="<?php esc_attr_e('Hero Image', 'dynamic-bang'); ?>" class="hero-image" />
             <?php endif; ?>
             
-            <a href="<?= get_site_url() ?>/blog" class="place-self-end  overlay-content absolute inset-0 flex justify-center items-center p-4"
-                aria-label="Go to blog posts." >
+            <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="place-self-end  overlay-content absolute inset-0 flex justify-center items-center p-4"
+                aria-label="<?php esc_attr_e( 'Go to blog posts', 'dynamic-bang' ); ?>" >
                 <div 
                     class="w-full bg-primary hover:bg-white text-black font-bold border-2 border-black px-4 py-2 uppercase"
-                    aria-label="Go to blog posts.">
+                    aria-label="<?php esc_attr_e( 'Go to blog posts', 'dynamic-bang' ); ?>">
                     Read more
                 </div>
             </a>
