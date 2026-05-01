@@ -96,79 +96,74 @@ add_action('after_setup_theme', 'dynamic_bang_setup');
 
 function dynamic_bang_scripts()
 {
+    $theme_version = wp_get_theme()->get('Version');
+
     // Add Tailwind
     wp_enqueue_style(
         'tailwind',
         get_template_directory_uri() . '/assets/css/output.css',
         array(),
-        true
+        $theme_version
     );
 
     // Enqueue Style.css
     wp_enqueue_style(
         'dynamic_bang',
-        get_template_directory_uri() . '/style.css'
+        get_template_directory_uri() . '/style.css',
+        array(),
+        $theme_version
     );
 
-    // Font Awsome
+    // Font Awesome (local)
     wp_enqueue_style(
         'font-awesome',
-        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css',
+        get_template_directory_uri() . '/assets/css/vendor/font-awesome.all.min.css',
         array(),
-        null // Optional: no version number
+        $theme_version
     );
 
-    // wp_enqueue_style('wp-block-library');
-    // wp_enqueue_style('wp-block-library-theme');
-
-    //jQuery enqueue
-    //wp_enqueue_script('jquery');
-
-    //Load Alpine.js
+    // Load Alpine.js (local)
     wp_enqueue_script(
         'alpine-js',
-        'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js',
+        get_template_directory_uri() . '/assets/js/vendor/alpine.min.js',
         array(),
-        null,
+        $theme_version,
         true
     ); // Load in the footer
-
-    // wp_enqueue_script('mobile-menu-js',
-    //     get_template_directory_uri() . '/assets/js/mobile-menu.js',
-    //     array('jquery'),
-    //     null,
-    //     true);
 
     wp_enqueue_script(
         'mobile-menu-focus-trap-js',
         get_template_directory_uri() . '/assets/js/mobile-menu-focus-trap.js',
         array(),
-        1.0,
+        $theme_version,
         true
     );
 
-    // Aria read more sqript enque
+    // Aria enhancements
 
     wp_enqueue_script(
         'aria-enhancements',
         get_template_directory_uri() . '/assets/js/aria-enhancements.js',
         array(),
-        null,
+        $theme_version,
         true // Load in the footer
     );
 
 }
 add_action('wp_enqueue_scripts', 'dynamic_bang_scripts');
 
-// Enqueue AOS
+// Enqueue AOS - only on front page where data-aos attributes are used
 
-function enqueue_aos()
+function dynamic_bang_enqueue_aos()
 {
-    wp_enqueue_style('aos-css', 'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css');
-    wp_enqueue_script('aos-js', 'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js', array(), null, true);
-    wp_enqueue_script('custom-aos', get_template_directory_uri() . '/assets/js/aos.js', array('aos-js'), null, true);
+    if (is_front_page()) {
+        $theme_version = wp_get_theme()->get('Version');
+        wp_enqueue_style('aos-css', get_template_directory_uri() . '/assets/css/vendor/aos.css', array(), $theme_version);
+        wp_enqueue_script('aos-js', get_template_directory_uri() . '/assets/js/vendor/aos.js', array(), $theme_version, true);
+        wp_enqueue_script('custom-aos', get_template_directory_uri() . '/assets/js/aos.js', array('aos-js'), $theme_version, true);
+    }
 }
-add_action('wp_enqueue_scripts', 'enqueue_aos');
+add_action('wp_enqueue_scripts', 'dynamic_bang_enqueue_aos');
 
 
 // Links all Post Thumbnails on your website to the Post Permalink
@@ -186,13 +181,13 @@ function dynamic_bang_post_thumbnail_html($html, $post_id, $post_image_id)
 
 // Generate all sub sizes using webp
 
-function wporg_image_editor_output_format($formats)
+function dynamic_bang_image_editor_output_format($formats)
 {
     $formats['image/jpg'] = 'image/webp';
 
     return $formats;
 }
-add_filter('image_editor_output_format', 'wporg_image_editor_output_format');
+add_filter('image_editor_output_format', 'dynamic_bang_image_editor_output_format');
 
 
 // Sidebar registartion
@@ -418,8 +413,9 @@ function dynamic_bang_customize_wsforms($wp_customize)
     ));
 
     $wp_customize->add_setting('show_newsletter', array(
-        'default'   => true,
-        'transport' => 'refresh',
+        'default'           => true,
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'wp_validate_boolean',
     ));
 
     $wp_customize->add_control('show_newsletter_control', array(
@@ -454,8 +450,9 @@ function dynamic_bang_customize_wsforms($wp_customize)
     ));
 
     $wp_customize->add_setting('wsform_style_file', array(
-        'default' => '',
-        'transport' => 'refresh',
+        'default'           => '',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'wsform_style_file_control', array(
@@ -463,7 +460,7 @@ function dynamic_bang_customize_wsforms($wp_customize)
         'section'  => 'wsform_section',
         'settings' => 'wsform_style_file',
         'type'     => 'hidden',
-        'description' => sprintf(__('Click here to download the style file: <a href="%s" target="_blank" download>Download JSON</a>', 'my-theme'), esc_url(get_template_directory_uri() . '/assets/wsf-style-fitness-pleasure.json')),
+        'description' => sprintf(__('Click here to download the style file: <a href="%s" target="_blank" download>Download JSON</a>', 'dynamic_bang'), esc_url(get_template_directory_uri() . '/assets/wsf-style-fitness-pleasure.json')),
     )));
 
 }
@@ -479,8 +476,9 @@ function dynamic_bang_customize_social_widget($wp_customize)
     ));
 
     $wp_customize->add_setting('show_social_widget', array(
-        'default'   => true,
-        'transport' => 'refresh',
+        'default'           => true,
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'wp_validate_boolean',
     ));
 
     $wp_customize->add_control('show_social_widget_control', array(
@@ -493,17 +491,17 @@ function dynamic_bang_customize_social_widget($wp_customize)
 }
 add_action('customize_register', 'dynamic_bang_customize_social_widget');
 
-// Remove prefixes
+// Remove archive title prefixes
 
-function wpdocs_remove_archive_title_prefixes($title, $original_title)
+function dynamic_bang_remove_archive_title_prefixes($title, $original_title)
 {
     return $original_title;
 }
-add_filter('get_the_archive_title', 'wpdocs_remove_archive_title_prefixes', 10, 2);
+add_filter('get_the_archive_title', 'dynamic_bang_remove_archive_title_prefixes', 10, 2);
 
 // Add background image lottery
 
-function get_random_background_image($file_name, $extension, $max_images)
+function dynamic_bang_get_random_background_image($file_name, $extension, $max_images)
 {
     $random_num = rand(1, $max_images);
     $theme_dir = get_template_directory(); // Base directory
