@@ -5,7 +5,7 @@ $title = isset($args['title']) ? $args['title'] : '' ;
 
 <div class="flex flex-col md:flex-row justify-between ">
     <div class="flex flex-row">
-        <div class="hashtag w-[3rem] bg-black" style="background-image: url('<?php echo get_random_background_image('title_bg_bolt', 'webp', 6) ?>'); background-size: contain; background-repeat: no-repeat;background-position: bottom;"></div>
+        <div class="hashtag w-[3rem] bg-black" style="background-image: url('<?php echo dynamic_bang_get_random_background_image('title_bg_bolt', 'webp', 6) ?>'); background-size: contain; background-repeat: no-repeat;background-position: bottom;"></div>
         <h1 class="section-title w-1/2 text-[3rem] font-bold text-sm/20 uppercase px-4"><?php echo sprintf(esc_html__('%s', 'dynamic_bang'), esc_html($title)); ?> </h1>
     </div>
     <a href="<?= get_site_url() ?>/category/<?php echo sprintf(esc_html__('%s', 'dynamic_bang'), esc_html($title)); ?>" 

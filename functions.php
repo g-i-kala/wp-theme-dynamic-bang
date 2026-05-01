@@ -276,7 +276,7 @@ function dynamic_bang_customize_brands($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'brand_image_2_control', array(
-       'label' => __('Upload 2n Image', 'dynamic_bang'),
+        'label' => __('Upload 2nd Image', 'dynamic_bang'),
        'section' => 'brands_images_section',
        'settings' => 'brand_image_2',
     )));

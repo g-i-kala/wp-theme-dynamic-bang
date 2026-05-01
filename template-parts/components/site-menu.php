@@ -18,7 +18,7 @@ $menu_id = isset($args['menu_id']) ? esc_attr($args['menu_id']) : 'navbar';
     </button>
 
     <!-- Mobile Full Screen Menu-->
-    <div x-cloak x-show="mobileMenuIsOpen" id="full-screen-menu" role="navigation" x-show="mobileMenuIsOpen"
+    <div x-cloak x-show="mobileMenuIsOpen" id="full-screen-menu" role="navigation"
         x-transition:enter="transition-opacity duration-300 ease-out"
         x-transition:enter-start="opacity-0"
         x-transition:enter-end="opacity-100"

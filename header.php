@@ -21,7 +21,7 @@
 
     <div id="page" class="site flex flex-col justify-center min-h-screen max-x-screen overflow-hidden bg__image ">
         <a class="skip-link screen-reader-text" href="#primary">
-            <?php esc_html_e('Skip to content', 'kalissima'); ?>
+            <?php esc_html_e('Skip to content', 'dynamic_bang'); ?>
         </a>
 
         <?php get_template_part('/template-parts/header/site', 'header'); ?>

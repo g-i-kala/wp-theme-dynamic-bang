@@ -4,7 +4,7 @@
         <div class="hashtag w-[3rem] bg-black">
         </div>
         
-        <div class="w-full h-32 flex flex-col justify-center" style="background-image: url('<?php echo get_random_background_image('heading_line', 'webp', 4) ?>') ; background-size: contain; background-repeat: no-repeat;">
+        <div class="w-full h-32 flex flex-col justify-center" style="background-image: url('<?php echo dynamic_bang_get_random_background_image('heading_line', 'webp', 4) ?>') ; background-size: contain; background-repeat: no-repeat;">
             <h1 class="page-title text-[4rem] md:text-[5rem] lg:text-[5rem] font-bold text-sm/15 md:text-sm/15 lg:text-sm/15 uppercase px-4"><?php _e('Blog Posts', 'dynamic_bang'); ?></h1>
         </div>
     </div>

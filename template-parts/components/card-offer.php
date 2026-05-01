@@ -26,9 +26,9 @@ $modal_content = isset($args['modal_content']) ? $args['modal_content'] : '';
     </div>
   </div>
   
-  <div x-show="showModal"
-       x-transition
-       class="fixed inset-0 flex items-center justify-center z-50">
+   <div x-cloak x-show="showModal"
+        x-transition
+        class="fixed inset-0 flex items-center justify-center z-50">
     <!-- Gray Background -->
     <div class='fixed inset-0 bg-lightgray opacity-80' @click="showModal = false; document.body.classList.remove('overflow-hidden')"></div>
     
